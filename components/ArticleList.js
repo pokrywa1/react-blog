@@ -2,27 +2,28 @@ import React from 'react';
 import classes from './ArticleList.module.css';
 import Image from 'next/image';
 import Preview from '../public/img/box.png';
+import Link from 'next/link';
 const ArticleList = ({ posts }) => {
-  console.log(posts);
-
   return (
     <section className={classes.section__container}>
       {posts.map(post => {
         const text = post.content.text.slice(0, 150) + '...';
         const src = post.coverPhoto.url;
         return (
-          <div className={classes.article}>
-            <Image
-              src={src}
-              alt=""
-              width="300"
-              height="300"
-              className={classes.img}
-            />
-            <span>{post.datePublished}</span>
-            <h3>{post.title}</h3>
-            <p>{text}</p>
-          </div>
+          <Link href={'/article/' + post.slug}>
+            <div className={classes.article} key={post.id}>
+              <Image
+                src={src}
+                alt=""
+                width="300"
+                height="300"
+                className={classes.img}
+              />
+              <span>{post.datePublished}</span>
+              <h3>{post.title}</h3>
+              <p>{text}</p>
+            </div>
+          </Link>
         );
       })}
     </section>
