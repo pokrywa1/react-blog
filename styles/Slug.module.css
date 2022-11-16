@@ -1,0 +1,65 @@
+.post__container {
+  max-width: 1024px;
+  margin: auto;
+  padding: 3rem;
+  display: flex;
+}
+.newsletter {
+  height: fit-content;
+  width: 300px;
+  margin-left: 5rem;
+  padding: 2rem;
+  background-color: rgb(233, 236, 241);
+  text-align: center;
+  border-top: 3px dashed #159a9c;
+  border-bottom: 3px dashed #159a9c;
+}
+.email {
+  margin-top: 2rem;
+  padding: 10px 7px;
+}
+.newsletter button {
+  width: 157px;
+  padding: 12px 8px;
+  margin-top: 1rem;
+  border: none;
+  background-color: #159a9c;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  transition: 0.4s;
+}
+.newsletter button:hover {
+  background-color: #13898b;
+  cursor: pointer;
+}
+.newsletter span {
+  font-size: 12px;
+  display: block;
+  margin-top: 1rem;
+  color: gray;
+}
+.single__article {
+  width: 70%;
+  background-color: rgb(233, 236, 241);
+  padding: 2rem;
+}
+
+.img {
+  width: 50%;
+  height: auto;
+}
+.content h2,
+.content h3 {
+  margin-top: 2rem;
+}
+
+.single__article span {
+  display: block;
+  font-size: 15px;
+  margin: 1rem 0 2rem;
+}
+
+.single__article p {
+  margin-top: 2rem;
+}

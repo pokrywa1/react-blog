@@ -19,6 +19,7 @@ const ArticleList = ({ posts }) => {
                 height="300"
                 className={classes.img}
               />
+
               <span>{post.datePublished}</span>
               <h3>{post.title}</h3>
               <p>{text}</p>

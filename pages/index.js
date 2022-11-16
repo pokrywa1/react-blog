@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import ArticleList from '../components/ArticleList';
 import LatestArticle from '../components/LatestArticle';
 import styles from '../styles/Home.module.css';
@@ -37,11 +37,17 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ posts }) {
-  console.log(posts);
+  const [articles, setArticles] = useState(posts);
+  const [latestArticle, setLatestArticle] = useState(() => {
+    return articles.reduce((a, b) =>
+      a.datePublished > b.datePublished ? a : b
+    );
+  });
+
   return (
     <Fragment>
-      <LatestArticle></LatestArticle>
-      <ArticleList posts={posts}></ArticleList>
+      <LatestArticle post={latestArticle}></LatestArticle>
+      <ArticleList posts={articles}></ArticleList>
     </Fragment>
   );
 }

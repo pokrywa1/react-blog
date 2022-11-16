@@ -7,6 +7,9 @@
   font-size: 64px;
   margin-bottom: 3rem;
 }
+.main__h1 span {
+  color: #159a9c;
+}
 .preview__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
