@@ -4,9 +4,7 @@ import Image from 'next/image';
 import classes from '../../styles/Slug.module.css';
 import Head from 'next/head';
 
-const graphcms = new GraphQLClient(
-  'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/claikqze01wbx01tc3m3leyy5/master'
-);
+const graphcms = new GraphQLClient(process.env.REACT_APP_SECRET_KEY);
 
 const QUERY = gql`
   query Post($slug: String!) {

@@ -6,9 +6,7 @@ import LatestArticle from '../components/LatestArticle';
 import styles from '../styles/Home.module.css';
 import { GraphQLClient, gql } from 'graphql-request';
 
-const graphcms = new GraphQLClient(
-  'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/claikqze01wbx01tc3m3leyy5/master'
-);
+const graphcms = new GraphQLClient(process.env.REACT_APP_SECRET_KEY);
 
 const QUERY = gql`
   query {
