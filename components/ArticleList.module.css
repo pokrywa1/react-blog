@@ -13,12 +13,22 @@
   height: 200px;
   border-radius: 15px;
   object-fit: cover;
+  -webkit-filter: brightness(100%);
 }
 .article {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 3rem;
+}
+
+.article:hover .img {
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .article span,

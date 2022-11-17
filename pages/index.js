@@ -38,11 +38,16 @@ export async function getStaticProps() {
 }
 export default function Home({ posts }) {
   const [articles, setArticles] = useState(posts);
+
   const [latestArticle, setLatestArticle] = useState(() => {
-    return articles.reduce((a, b) =>
-      a.datePublished > b.datePublished ? a : b
-    );
+    return posts.reduce((a, b) => (a.datePublished > b.datePublished ? a : b));
   });
+
+  useEffect(() => {
+    setArticles(current =>
+      current.filter(item => item.id !== latestArticle.id)
+    );
+  }, []);
 
   return (
     <Fragment>
