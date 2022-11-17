@@ -51,6 +51,14 @@ export default function Home({ posts }) {
 
   return (
     <Fragment>
+      <Head>
+        <title>The blog</title>
+        <meta
+          name="description"
+          content="A blog dedicated to technological innovations in the IT industry"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <LatestArticle post={latestArticle}></LatestArticle>
       <ArticleList posts={articles}></ArticleList>
     </Fragment>

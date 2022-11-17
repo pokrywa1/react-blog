@@ -2,6 +2,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import { Fragment } from 'react';
 import Image from 'next/image';
 import classes from '../../styles/Slug.module.css';
+import Head from 'next/head';
 
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/claikqze01wbx01tc3m3leyy5/master'
@@ -16,6 +17,7 @@ const QUERY = gql`
       datePublished
       content {
         html
+        text
       }
       coverPhoto {
         url
@@ -60,6 +62,11 @@ export async function getStaticProps({ params }) {
 const Article = ({ post }) => {
   return (
     <Fragment>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.content.text.slice(0, 150)} />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className={classes.post__container}>
         <section className={classes.single__article}>
           <h1>{post.title}</h1>
